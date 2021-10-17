@@ -3,28 +3,58 @@
 	define("SEP", "\\");
 
 	//settings class!
-	class sts {
-		static $a = array(
-			'targetDir' => 'C:\Users\EUGENY\vvv-local\www\wordpress-one\public_html\wp-content\themes\gogogo'
+	class transformer {
+		static $rules = array(
+			'workingDir' => 'C:\Users\EUGENY\vvv-local\www\sample-theme\public_html',
+			'targetDir' => 'C:\Users\EUGENY\vvv-local\www\wordpress-one\public_html\wp-content\themes\gogogo',
+			'items' => [
+				array(
+					'command' => 'copyFile',
+					'filename' => 'style.css'
+				)
+			]
 		);
 	}
-
-	$arr = sts::$a;
 	
-	function getPath($fName) {
+	function getTargetPath($fName) {
 		//return $transformationObj['targetDir'] . SEP . $fName;
-		return sts::$a['targetDir'] . SEP . $fName;
+		return transformer::$rules['targetDir'] . SEP . $fName;
 	}
 
-	echo "Final file name: " . getPath('tst.txt');
+	/**
+	 * Command to copy a file!
+	 */
+	function cmd_copyFile($item) {
+		
+		$myfile = fopen(getTargetPath($item['filename']), "w") or die("Unable to open file!");
+		//$myfile = fopen("style2.css", "w") or die("Unable to open file!");
+		$txt = file_get_contents(transformer::$rules['workingDir'] . SEP . $item['filename']);
+		fwrite($myfile, $txt);
+		fclose($myfile);
 
-	$myfile = fopen($arr['targetDir'] . SEP . "style2.css", "w") or die("Unable to open file!");
-	//$myfile = fopen("style2.css", "w") or die("Unable to open file!");
+		return true;
+	}
 
-	$txt = "Mickey Mouse\n";
-	fwrite($myfile, $txt);
-	$txt = "Minnie Mouse\n";
-	fwrite($myfile, $txt);
-	fclose($myfile);
+
+	echo "Running transform.php at " . date("h:i:sa") . " for " . count(transformer::$rules['items']) . " items!\n";
+	echo "Executing...\n";
+
+	foreach (transformer::$rules['items'] as $v) {
+
+		$ret = false;
+		echo "=> " . $v['command'];
+
+		switch ($v['command']) {
+			case 'copyFile':
+				$ret = cmd_copyFile($v);
+				break;
+			
+			default:
+				# code...
+				break;
+		}
+
+		echo " -> " . ($ret?'done':'failed!') . "\n";
+	}
 
 ?>
