@@ -1,0 +1,8 @@
+{
+	"actions": [
+		{
+			"action": "CopyFile",
+			"fileName": "style.css"
+		}
+	]
+}
