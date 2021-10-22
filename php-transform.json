@@ -1,8 +1,13 @@
 {
+	"targetDir": "C:\\Users\\EUGENY\\vvv-local\\www\\wordpress-one\\public_html\\wp-content\\themes\\gogogo\\",
 	"actions": [
 		{
 			"action": "CopyFile",
 			"fileName": "style.css"
+		},
+		{
+			"action": "HTMLReplace",
+			"fileName": "index.html"
 		}
 	]
 }
