@@ -7,7 +7,11 @@
 		},
 		{
 			"action": "HTMLReplace",
-			"fileName": "index.html"
+			"contentFromFileName": "index.html",
+			"contentToFileName": "header-test.php",
+			"tags": [
+				"header"
+			]
 		}
 	]
 }
