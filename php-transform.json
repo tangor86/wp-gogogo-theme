@@ -3,13 +3,18 @@
 	"stubsDir": "C:\\Users\\EUGENY\\vvv-local\\www\\wordpress-one\\public_html\\wp-content\\themes\\gogogo\\padma\\",
 	"actions": [
 		{
-			"action": "CopyFile",
+			"action": "HardCopyFileFromSource",
 			"fileName": "style.css"
+		},
+		{
+			"action": "HardCopyFileFromStubs",
+			"fileName": "screenshot.png"
 		},
 		{
 			"action": "HTMLReplace",
 			"contentFromFileName": "index.html",
-			"contentToFileName": "header-test.php",
+			"stubFileName": "header.php",
+			"contentToFileName": "header.php",
 			"tags": [
 				"header"
 			]
