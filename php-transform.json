@@ -11,6 +11,15 @@
 			"fileName": "screenshot.png"
 		},
 		{
+			"action": "HardCopyFileFromStubs",
+			"fileName": [
+				"index.php",
+				"sidebar.php",
+				"footer.php",
+				"functions.php"
+			]
+		},
+		{
 			"action": "HTMLReplace",
 			"contentFromFileName": "index.html",
 			"stubFileName": "header.php",
