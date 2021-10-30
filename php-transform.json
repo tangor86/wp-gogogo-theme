@@ -1,32 +1,68 @@
 {
 	"targetDir": "C:\\Users\\EUGENY\\vvv-local\\www\\wordpress-one\\public_html\\wp-content\\themes\\gogogo\\",
-	"stubsDir": "C:\\Users\\EUGENY\\vvv-local\\www\\wordpress-one\\public_html\\wp-content\\themes\\gogogo\\padma\\",
-	"actions": [
-		{
-			"action": "HardCopyFileFromSource",
-			"fileName": "style.css"
+	"stubsDir": "C:\\Users\\EUGENY\\vvv-local\\www\\wordpress-one\\public_html\\wp-content\\themes\\gogogo\\padma-stubs\\",
+	"tasks": {
+		"CopyFolders": {
+			"folderName": [
+				"welcome",
+				"template-parts",
+				"inc"
+			],
+			"processors": [{"name": "CopyFolder", "dirType": "stubs"}]
 		},
-		{
-			"action": "HardCopyFileFromStubs",
-			"fileName": "screenshot.png"
+		"style.css": {
+			"fileName": "style.css",
+			"processors": [{"name": "HardCopyFileFromSource"}]
 		},
-		{
-			"action": "HardCopyFileFromStubs",
+		"stubsFiles": {
 			"fileName": [
-				"index.php",
+				"screenshot.png",
 				"sidebar.php",
-				"footer.php",
 				"functions.php"
-			]
+			],
+			"processors": [{"name": "HardCopyFileFromStubs"}]
 		},
-		{
-			"action": "HTMLReplace",
+		"HTMLReplace_header": {
 			"contentFromFileName": "index.html",
 			"stubFileName": "header.php",
 			"contentToFileName": "header.php",
-			"tags": [
-				"header"
+			"processors": [
+				{
+					"name": "HTMLReplace", 
+					"tags": [
+						"svg",
+						"css",
+						"header"
+					]
+				}
+			]
+		},
+		"HTMLReplace_footer": {
+			"contentFromFileName": "index.html",
+			"stubFileName": "footer.php",
+			"contentToFileName": "footer.php",
+			"processors": [
+				{
+					"name": "HTMLReplace",
+					"tags": [
+						"js",
+						"footer"
+					]
+				}
+			]
+		},
+		"HTMLReplace_index": {
+			"contentFromFileName": "index.html",
+			"stubFileName": "index.php",
+			"contentToFileName": "index.php",
+			"processors": [
+				{
+					"name": "HTMLReplace",
+					"tags": [
+						"sidebar"
+					]
+				}
 			]
 		}
-	]
+	}
 }
