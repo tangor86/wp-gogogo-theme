@@ -1,6 +1,8 @@
 {
-	"targetDir": "C:\\Users\\EUGENY\\vvv-local\\www\\wordpress-one\\public_html\\wp-content\\themes\\gogogo\\",
-	"stubsDir": "C:\\Users\\EUGENY\\vvv-local\\www\\wordpress-one\\public_html\\wp-content\\themes\\gogogo\\padma-stubs\\",
+	"dirs": {
+		"target": "C:\\Users\\EUGENY\\vvv-local\\www\\wordpress-one\\public_html\\wp-content\\themes\\gogogo\\",
+		"stubs": "C:\\Users\\EUGENY\\vvv-local\\www\\wordpress-one\\public_html\\wp-content\\themes\\gogogo\\padma-stubs\\"
+	},
 	"tasks": {
 		"CopyFolders": {
 			"folderName": [
@@ -8,19 +10,19 @@
 				"template-parts",
 				"inc"
 			],
-			"processors": [{"name": "CopyFolder", "dirType": "stubs"}]
+			"processors": [{"name": "CopyFolder", "fromDir": "stubs"}]
 		},
-		"style.css": {
+		"CopyFile_source": {
 			"fileName": "style.css",
-			"processors": [{"name": "HardCopyFileFromSource"}]
+			"processors": [{"name": "CopyFile", "fromDir": "source"}]
 		},
-		"stubsFiles": {
+		"CopyFile_stubs": {
 			"fileName": [
 				"screenshot.png",
 				"sidebar.php",
 				"functions.php"
 			],
-			"processors": [{"name": "HardCopyFileFromStubs"}]
+			"processors": [{"name": "CopyFile", "fromDir": "stubs"}]
 		},
 		"HTMLReplace_header": {
 			"contentFromFileName": "index.html",
