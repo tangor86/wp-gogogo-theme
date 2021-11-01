@@ -32,8 +32,18 @@
 				{
 					"name": "HTMLReplace", 
 					"tags": [
-						"svg",
-						"css",
+						"svg"
+					]
+				},
+				{
+					"name": "HTMLReplace", 
+					"tags": [
+						"css"
+					]
+				},
+				{
+					"name": "HTMLReplace", 
+					"tags": [
 						"header"
 					]
 				}
