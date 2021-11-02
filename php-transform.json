@@ -32,13 +32,7 @@
 				{
 					"name": "HTMLReplace", 
 					"tags": [
-						"svg"
-					]
-				},
-				{
-					"name": "HTMLReplace", 
-					"tags": [
-						"css"
+						"svg", "css"
 					]
 				},
 				{
@@ -46,6 +40,11 @@
 					"tags": [
 						"header"
 					]
+				},
+				{
+					"name": "StrReplace",
+					"find": "<link rel=\"stylesheet\" href=\"./style.css\">",
+					"replace": "<link rel=\"stylesheet\" href=\"<?php echo get_stylesheet_uri(); ?>\">"
 				}
 			]
 		},
