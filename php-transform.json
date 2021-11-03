@@ -25,9 +25,8 @@
 			"processors": [{"name": "CopyFile", "fromDir": "stubs"}]
 		},
 		"HTMLReplace_header": {
-			"contentFromFileName": "index.html",
-			"stubFileName": "header.php",
-			"contentToFileName": "header.php",
+			"tplFile": "index.html",
+			"stubFile": "header.php",
 			"processors": [
 				{
 					"name": "HTMLReplace", 
@@ -49,9 +48,8 @@
 			]
 		},
 		"HTMLReplace_footer": {
-			"contentFromFileName": "index.html",
-			"stubFileName": "footer.php",
-			"contentToFileName": "footer.php",
+			"tplFile": "index.html",
+			"stubFile": "footer.php",
 			"processors": [
 				{
 					"name": "HTMLReplace",
@@ -63,9 +61,8 @@
 			]
 		},
 		"HTMLReplace_index": {
-			"contentFromFileName": "index.html",
-			"stubFileName": "index.php",
-			"contentToFileName": "index.php",
+			"tplFile": "index.html",
+			"stubFile": "index.php",
 			"processors": [
 				{
 					"name": "HTMLReplace",
