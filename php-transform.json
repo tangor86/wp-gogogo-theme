@@ -25,6 +25,7 @@
 			"processors": [{"name": "CopyFile", "fromDir": "stubs"}]
 		},
 		"HTMLReplace_header": {
+			"writeToFile": true,
 			"tplFile": "index.html",
 			"stubFile": "header.php",
 			"processors": [
@@ -48,6 +49,7 @@
 			]
 		},
 		"HTMLReplace_footer": {
+			"writeToFile": true,
 			"tplFile": "index.html",
 			"stubFile": "footer.php",
 			"processors": [
@@ -61,6 +63,7 @@
 			]
 		},
 		"HTMLReplace_index": {
+			"writeToFile": true,
 			"tplFile": "index.html",
 			"stubFile": "index.php",
 			"processors": [
