@@ -22,12 +22,6 @@
 			<p class="blog-post-meta"><?php padma_posted_on(); ?> <?php padma_posted_by(); ?></p>
 		<?php endif; ?>
 
-		<!--
-		<div class="post-thumbnail">
-			<?php padma_post_thumbnail(); ?>
-		</div>
-		-->
-
 		<div class="entry-content">
 			<?php
 
