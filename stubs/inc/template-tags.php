@@ -27,8 +27,10 @@ if ( ! function_exists( 'padma_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
+			//esc_html( 'On %s', 'post date', 'padma' ),
 			esc_html( 'On %s', 'post date', 'padma' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			//'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			$time_string
 		);
 
 		echo '<span class="posted-on"><i class="fa fa-clock-o"></i>' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -43,8 +45,8 @@ if ( ! function_exists( 'padma_posted_by' ) ) :
 	function padma_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html( 'By %s', 'post author', 'padma' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			esc_html( 'by %s', 'post author', 'padma' ),
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( ucfirst(get_the_author()) ) . '</a></span>'
 		);
 
 		echo '<span class="byline"><i class="fa fa-user"></i>' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

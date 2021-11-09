@@ -7,35 +7,31 @@
  * @package Padma
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="blog-post">
 	<div class="post-content">
-		<header class="entry-header">
-			<?php
-			if ( is_singular() ) :
-				the_title( '<h1 class="entry-title">', '</h1>' );
-			else :
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			endif; ?>
-		</header><!-- .entry-header -->
+		<?php
+		if ( is_singular() ) :
+			the_title( '<h1 class="blog-post-title">', '</h1>' );
+		else :
+			the_title( '<h2 class="blog-post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif;
+		?>
 
 		<?php
 		if ( 'post' === get_post_type() ) : ?>
-			<div class="entry-meta">
-				<?php 
-					padma_posted_on(); 
-					padma_posted_by();
-				?>
-			</div><!-- .entry-meta -->
+			<p class="blog-post-meta"><?php padma_posted_on(); ?> <?php padma_posted_by(); ?></p>
 		<?php endif; ?>
 
+		<!--
 		<div class="post-thumbnail">
 			<?php padma_post_thumbnail(); ?>
 		</div>
+		-->
 
 		<div class="entry-content">
 			<?php
 
-			if(is_single( )){
+			if (is_single( )) {
 				the_content(
 					sprintf(
 						wp_kses(
@@ -50,7 +46,7 @@
 						wp_kses_post( get_the_title() )
 					)
 				);
-			}else{
+			} else {
 				the_excerpt();
 			}
 			wp_link_pages(

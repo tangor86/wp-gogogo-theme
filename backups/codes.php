@@ -1,3 +1,10 @@
+<!--[arstratsiroaste]
+<?php if ( is_front_page() && is_home() ) :	?>
+<li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home!</a></li>
+<?php endif; ?>
+-->
+
+
 <?php
 /**
  * The main template file
@@ -23,25 +30,37 @@ get_header();
 					/* Start the Loop */
 					while ( have_posts() ) :
 						the_post();
+						?>
+						<article class="blog-post">
+							<?php the_title( '<h2 class="blog-post-title">', '</h2>' ); ?>
+							<p class="blog-post-meta"><?php padma_posted_on();?> <?php padma_posted_by(); ?></p>
 
-						/*
-							* Include the Post-Type-specific template for the content.
-							* If you want to override this in a child theme, then include a file
-							* called content-___.php (where ___ is the Post Type name) and that will be used instead.
-							*/
-						get_template_part( 'template-parts/content', get_post_type() );
-
+							<?php
+								the_content(
+									sprintf(
+										wp_kses(
+											/* translators: %s: Name of current post. Only visible to screen readers */
+											__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'padma' ),
+											array(
+												'span' => array(
+													'class' => array(),
+												),
+											)
+										),
+										wp_kses_post( get_the_title() )
+									)
+								);
+							?>
+						</article>
+						<?php
 					endwhile; 
 					the_posts_navigation();
-
 				else :
-					
 					get_template_part( 'template-parts/content', 'none' );
-
 				endif;
 			?>
 		</div>
-		<?php if (is_active_sidebar('sidebar-1')): ?>
+		<?php if(is_active_sidebar('sidebar-1')): ?>
 		<div class="col-lg-4">
 			<?php get_sidebar(); ?>
 		</div>
