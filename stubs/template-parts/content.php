@@ -7,25 +7,25 @@
  * @package Padma
  */
 ?>
-<article id="post-<?php the_ID(); ?>" class="blog-post">
+<article id="post-<?php the_ID(); ?>" class="blog-post mb-5">
 	<div class="post-content">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="blog-post-title">', '</h1>' );
 		else :
-			the_title( '<h2 class="blog-post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h1 class="blog-post-title display-6"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
 		endif;
 		?>
 
 		<?php
 		if ( 'post' === get_post_type() ) : ?>
-			<p class="blog-post-meta"><?php padma_posted_on(); ?> <?php padma_posted_by(); ?></p>
+			<p class="blog-post-meta small"><?php padma_posted_on(); ?> <?php padma_posted_by(); ?></p>
 		<?php endif; ?>
 
-		<div class="entry-content">
+		<div class="entry-content fs-6">
 			<?php
 
-			if (is_single( )) {
+			if (is_single()) {
 				the_content(
 					sprintf(
 						wp_kses(
