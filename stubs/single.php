@@ -6,9 +6,9 @@
  *
  * @package Padma
  */
-if(is_active_sidebar('sidebar-1')){
+if (is_active_sidebar('sidebar-1')) {
 	$padma_column = 8;
-}else{
+} else {
 	$padma_column = 12;
 }
 get_header();
@@ -48,6 +48,6 @@ get_header();
 			<?php endif; ?>
 		</div>
 	</div>
-</div>
+</section>
 <?php
 get_footer();

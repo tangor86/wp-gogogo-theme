@@ -105,7 +105,7 @@ function gogogo_widgets_init() {
 			'name'          => esc_html__( 'Sidebar', 'padma' ),
 			'id'            => 'sidebar-1',
 			'description'   => esc_html__( 'Add widgets here.', 'padma' ),
-			'before_widget' => '<div id="%1$s" class="p-4 %2$s">',
+			'before_widget' => '<div id="%1$s" class="p-3 mb-3 bg-light rounded %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h4 class="fst-italic">',
 			'after_title'   => '</h4>',

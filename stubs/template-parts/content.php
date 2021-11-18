@@ -7,13 +7,13 @@
  * @package Padma
  */
 ?>
-<article id="post-<?php the_ID(); ?>" class="blog-post mb-5">
+<article id="post-<?php the_ID(); ?>" class="blog-post mb-4">
 	<div class="post-content">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="blog-post-title">', '</h1>' );
 		else :
-			the_title( '<h1 class="blog-post-title display-6"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+			the_title( '<h3 class="blog-post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 		endif;
 		?>
 
@@ -51,6 +51,7 @@
 			);
 			?>
 		</div><!-- .entry-content -->
+        <div class="small text-center text-muted">--- // --- // ---</div>
 
 		<?php if ( is_singular() ) : ?>
 			<footer class="entry-footer">

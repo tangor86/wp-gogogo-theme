@@ -1,3 +1,40 @@
+/*@import url("https://code.cdn.mozilla.net/fonts/fira.css");*/
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@5.2/distr/fira_code.css);
+
+body {
+	font-family: 'Fira Code', monospace !important;
+	/*font-size: 1rem !important;*/
+}
+
+pre.wp-block-preformatted {
+	border-left: 4px solid #04AA6D;
+	padding: 8px 12px;
+	background-color: #F8F9FA;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	background-color: darkgreen !important;
+}
+
+.gogogo a {
+	color: green;
+}
+
+.gogogo .blockquote-footer {
+	margin-bottom: 0px;
+}
+
+.wp-block-group h2 {
+	font-size: 1.75rem;
+	font-weight: lighter;
+	/*font-style: italic;*/
+	/*border-bottom: 1px solid #f8f9fa;*/
+}
+
+.blog-post-title {
+	margin-bottom: 0px;
+}
+
 .blog-post-title a {
 	text-decoration: none;
 	color: black;
