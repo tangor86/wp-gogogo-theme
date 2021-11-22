@@ -4,12 +4,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Padma
+ * @package Gogogo
  */
 
 ?>
 
 <section class="no-results not-found">
+                                                        <h1>content-none!!!!!!!!</h1>
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'padma' ); ?></h1>
 	</header><!-- .page-header -->

@@ -4,12 +4,13 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Padma
+ * @package Gogogo
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+content search!
 	<?php padma_post_thumbnail(); ?>
 	<div class="post-content">
 		<header class="entry-header">

@@ -4,12 +4,15 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Padma
+ * @package Gogogo
  */
 ?>
 <article id="post-<?php the_ID(); ?>" class="blog-post mb-4">
 	<div class="post-content">
 		<?php
+
+        echo is_singular()?"sing=true!!!!!":"sign=false!!";
+
 		if ( is_singular() ) :
 			the_title( '<h1 class="blog-post-title">', '</h1>' );
 		else :

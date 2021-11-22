@@ -19,6 +19,8 @@ get_header();
 	<div class="row g-5">
 		<div class="col-md-8">
 			<?php
+                echo "index get_post_type() = " . get_post_type();
+
 				if ( have_posts() ) :
 					/* Start the Loop */
 					while ( have_posts() ) :

@@ -4,11 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Padma
+ * @package Gogogo
  */
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+this is a page file!
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
