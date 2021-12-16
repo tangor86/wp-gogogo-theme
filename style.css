@@ -13,11 +13,11 @@ pre.wp-block-preformatted {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-	background-color: darkgreen !important;
+	/*background-color: darkgreen !important;*/
 }
 
 .gogogo a {
-	color: green;
+	/*color: green;*/
 }
 
 .gogogo .blockquote-footer {

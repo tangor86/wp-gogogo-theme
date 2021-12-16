@@ -54,7 +54,10 @@
 			);
 			?>
 		</div><!-- .entry-content -->
+
+        <?php if (!is_single()) : ?>
         <div class="small text-center text-muted">--- // --- // ---</div>
+        <?php endif; ?>
 
 		<?php if ( is_singular() ) : ?>
 			<footer class="entry-footer">
